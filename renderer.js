@@ -1,11 +1,11 @@
 //'use strict'
 let nodepath = ''
 let os = require('os')
-if(os.platform = 'darwin')
+if(os.platform() === 'darwin')
 {
     nodepath = './CustomAddonMac.node';
 }
-else if(os.platform = 'win32')
+else if(os.platform() === 'win32')
 {
     nodepath = './CustomAddonWin.node';
 }
@@ -13,10 +13,6 @@ else if(os.platform = 'win32')
 const addon = require(nodepath)
 let myObjWrap2 = null
 const testAPI = document.getElementById('TEST')
-function tsfn()
-{
-    console.log('hello world')
-}
 
 function callEmit() 
 {
