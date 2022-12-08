@@ -138,7 +138,7 @@
     <ClCompile Include="..\addon.cc">
       <ObjectFileName>$(IntDir)\addon.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
+    <ClCompile Include="D:\napi-electron-demo\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
