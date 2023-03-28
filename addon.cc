@@ -75,11 +75,7 @@ void threadLoop()
     {
       Napi::Object videoFrame = Napi::Object::New(env);
       videoFrame.Set("width", Napi::Number::New(env, 1920));
-      videoFrame.Set("mode2", Napi::Number::New(env, 1920));
-      videoFrame.Set("mode3", Napi::Number::New(env, 1080));
-      videoFrame.Set("mode4", Napi::Number::New(env, 1920));
-      videoFrame.Set("mode5", Napi::Number::New(env, 1080));
-      for(int i = 0; i<5000; i++)   // Compare to internal frequent tasks
+      for(int i = 0; i<7000; i++)   // Compare to internal frequent tasks
       {
         videoFrame.Set(std::to_string(i).c_str(), Napi::String::New(env, "123456789"));
       }
@@ -87,6 +83,7 @@ void threadLoop()
       for(int i = 0; i<7000; i++)
       {
         videoFrame.Set(std::to_string(i).c_str(), Napi::Number::New(env, 1080));
+        videoFrame.Set(std::to_string(i).c_str(), Napi::Number::New(env, 1920));
       }
       function.Call({Napi::String::New(env, "hello from thread loop 1"), videoFrame});
     };
@@ -104,17 +101,14 @@ void threadLoop2()
     {
 		  Napi::Object videoFrame = Napi::Object::New(env);
       videoFrame.Set("width", Napi::Number::New(env, 1920));
-      videoFrame.Set("mode2", Napi::Number::New(env, 1920));
-      videoFrame.Set("mode3", Napi::Number::New(env, 1080));
-      videoFrame.Set("mode4", Napi::Number::New(env, 1920));
-      videoFrame.Set("mode5", Napi::Number::New(env, 1080));
 
-      for(int i = 0; i<5000; i++)
+      for(int i = 0; i<8000; i++)
       {
         videoFrame.Set(std::to_string(i).c_str(), Napi::Number::New(env, 1080));
+        videoFrame.Set(std::to_string(i).c_str(), Napi::Number::New(env, 1920));
       }
 
-      for(int i = 0; i<5000; i++)   // Compare to internal frequent tasks
+      for(int i = 0; i<8000; i++)   // Compare to internal frequent tasks
       {
         videoFrame.Set(std::to_string(i).c_str(), Napi::String::New(env, "123456789"));
       }
